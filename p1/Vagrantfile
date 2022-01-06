@@ -26,6 +26,7 @@ config.vm.box = "centos/8"
             v.memory = 512
             v.cpus = 1
             end
+        control.vm.provision "key", type: "file", source: ".vagrant/machines/ahintzS/virtualbox/private_key", destination: "/home/vagrant/.ssh/id_rsa"
         control.vm.provision "shell", path: "scripts/slave.sh"
         end
 end

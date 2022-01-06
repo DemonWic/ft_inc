@@ -21,4 +21,3 @@ export INSTALL_K3S_EXEC="--write-kubeconfig ~/.kube/config --write-kubeconfig-mo
 su vagrant -c "curl -sfL https://get.k3s.io | sh -s -"
 cp /var/lib/rancher/k3s/server/node-token  /home/vagrant/token
 chown vagrant /home/vagrant/token
-cat /vagrant/keys/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
