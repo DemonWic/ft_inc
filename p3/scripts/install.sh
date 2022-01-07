@@ -6,4 +6,4 @@ k3d cluster create mycluster -p "8080:80@loadbalancer" -p "8082:443@loadbalancer
 kubectl create ns argocd
 kubectl create ns dev
 curl https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml | sed -e 's/\( *\)- argocd-server/&\n\1- --insecure/' | kubectl apply -n argocd -f -
-kubectl apply -n argocd -f ../confs/ingress.yaml
+kubectl apply -n argocd -f ../configs/ingress.yaml
