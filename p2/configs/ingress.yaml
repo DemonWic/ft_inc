@@ -1,23 +1,23 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: header-route
-spec:
+apiVersion: traefik.containo.us/v1alpha1 
+kind: IngressRoute 
+metadata: 
+  name: header-based-route 
+spec: 
   entryPoints:
   - web
-  routes:
+  routes: 
   - match: "PathPrefix(`/`) && Host(`app1.com`)"
-    kind: Rule
-    services:
+    kind: Rule 
+    services: 
     - name: app-one
-      port: 80
+      port: 80 
   - match: "PathPrefix(`/`) && Host(`app2.com`)"
-    kind: Rule
-    services:
+    kind: Rule 
+    services: 
     - name: app-two
       port: 80
   - match: PathPrefix(`/`)
-    kind: Rule
-    services:
+    kind: Rule 
+    services: 
     - name: app-three
       port: 80
